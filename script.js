@@ -5,12 +5,45 @@ const chatMessages = document.getElementById('chat-messages');
 const userInput = document.getElementById('user-input');
 const sendButton = document.getElementById('send-button');
 
+// Function to format the AI response
+function formatAIResponse(text) {
+    // Format code blocks
+    text = text.replace(/```([\s\S]*?)```/g, (match, code) => {
+        return `<pre><code>${code.trim()}</code></pre>`;
+    });
+
+    // Format inline code
+    text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+    // Format quotes
+    text = text.replace(/(?:^|\n)>[ ]?(.*?)(?:\n|$)/g, (match, quote) => {
+        return `\n<blockquote>${quote.trim()}</blockquote>\n`;
+    });
+
+    // Convert URLs to links
+    text = text.replace(
+        /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig,
+        '<a href="$1" target="_blank">$1</a>'
+    );
+
+    // Convert line breaks to <br>
+    text = text.replace(/\n/g, '<br>');
+
+    return text;
+}
+
 // Function to add a message to the chat
 function addMessage(content, isUser = false) {
     const messageDiv = document.createElement('div');
     messageDiv.classList.add('message');
     messageDiv.classList.add(isUser ? 'user-message' : 'ai-message');
-    messageDiv.textContent = content;
+    
+    if (isUser) {
+        messageDiv.textContent = content;
+    } else {
+        messageDiv.innerHTML = formatAIResponse(content);
+    }
+    
     chatMessages.appendChild(messageDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }

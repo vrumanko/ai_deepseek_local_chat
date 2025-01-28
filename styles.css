@@ -46,6 +46,7 @@ body {
     border-radius: 15px;
     max-width: 70%;
     word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 .user-message {
@@ -57,6 +58,40 @@ body {
 .ai-message {
     background-color: #e9ecef;
     color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.ai-message blockquote {
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-left: 4px solid #007bff;
+    background-color: #f8f9fa;
+    color: #495057;
+    font-style: italic;
+}
+
+.ai-message code {
+    background-color: #f1f3f5;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #e83e8c;
+}
+
+.ai-message pre {
+    background-color: #2d2d2d;
+    color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 10px 0;
+}
+
+.ai-message pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
 }
 
 .chat-input {
