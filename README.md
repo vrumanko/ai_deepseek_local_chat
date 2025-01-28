@@ -66,7 +66,11 @@ You should see 'deepseek-r1:latest' in the list of models
 
 ## Application Installation
 
-1. Clone or download this repository to your local machine
+1. Clone the repository:
+```bash
+git clone https://github.com/vrumanko/ai_deepseek_local_chat.git
+cd ai_deepseek_local_chat
+```
 
 2. Install the required dependencies:
 ```bash
