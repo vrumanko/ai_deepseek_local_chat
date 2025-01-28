@@ -64,6 +64,12 @@ ollama list
 ```
 You should see 'deepseek-r1:latest' in the list of models
 
+5. Run the model:
+```bash
+ollama run deepseek-r1:latest
+```
+This will start an interactive chat session with the model in your terminal. Type 'exit' to quit the session.
+
 ## Application Installation
 
 1. Clone the repository:
@@ -95,11 +101,11 @@ http://localhost:3000
 
 ## Features
 
-- Clean, modern user interface
-- Real-time chat interaction with the AI model
-- Support for Enter key to send messages
+- AI model and API endpoint runs locally on your machine
+- Clean user interface, responsive design
+- Real-time chat interaction with the DeepSeek-R1 AI model
 - Error handling and status messages
-- Responsive design that works on both desktop and mobile devices
+
 
 ## File Structure
 
@@ -125,6 +131,7 @@ http://localhost:3000
      - macOS/Linux: Run `ps aux | grep ollama` to check if the process is running
    - Run `ollama pull deepseek-r1:latest` to install the model
    - Verify with `ollama list` that the model is installed
+   - Try running `ollama run deepseek-r1:latest` to test the model directly
 
 2. If the server won't start:
    - Check if port 3000 is already in use
