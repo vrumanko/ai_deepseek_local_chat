@@ -1,14 +1,62 @@
 # AI Chat Application
 
-A simple web-based chat application that uses the Ollama API to interact with the DeepSeek-R1. Everything running locally on your machine.
+A simple web-based chat application that uses the Ollama API to interact with the DeepSeek-R1. Everything is running locally on your machine.
 
 ## Prerequisites
 
 Before running the application, make sure you have:
 
-1. [Node.js](https://nodejs.org/) installed on your system
+1. [Node.js and NPM](https://nodejs.org/) installed on your system
 2. [Ollama](https://ollama.ai/) installed and running locally
 3. The DeepSeek-R1 model installed in Ollama
+
+### Installing Node.js and NPM
+
+#### Windows
+1. Download the Node.js installer from [nodejs.org](https://nodejs.org/)
+   - Choose the LTS (Long Term Support) version
+   - Run the downloaded .msi installer
+   - Follow the installation wizard, accepting the default settings
+2. Verify the installation by opening Command Prompt and running:
+```bash
+node --version
+npm --version
+```
+
+#### macOS
+1. Using Homebrew:
+```bash
+brew install node
+```
+
+2. Or download the macOS installer from [nodejs.org](https://nodejs.org/)
+   - Choose the LTS version
+   - Run the downloaded .pkg installer
+   - Follow the installation wizard
+
+3. Verify the installation:
+```bash
+node --version
+npm --version
+```
+
+#### Linux (Ubuntu/Debian)
+1. Using apt:
+```bash
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+2. Verify the installation:
+```bash
+node --version
+npm --version
+```
+
+#### Linux (Fedora)
+```bash
+sudo dnf install nodejs npm
+```
 
 ## Ollama Installation
 
