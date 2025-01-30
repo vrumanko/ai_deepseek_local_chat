@@ -14,7 +14,12 @@
         <div class="chat-messages" id="chat-messages">
             <!-- Messages will be displayed here -->
         </div>
-        <div class="chat-input">
+        <div class="input-container">
+            <div class="temperature-control">
+                <label for="temperature">AI Creativity: </label>
+                <input type="range" id="temperature" min="0" max="100" value="70">
+                <span id="temperature-value">0.7</span>
+            </div>
             <textarea id="user-input" placeholder="Type your message here..."></textarea>
             <button id="send-button">Send</button>
         </div>

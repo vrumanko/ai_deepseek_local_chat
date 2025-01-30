@@ -12,6 +12,10 @@ const userInput = document.getElementById('user-input');
 // Button to send messages
 const sendButton = document.getElementById('send-button');
 
+// Add new constants for temperature control
+const temperatureSlider = document.getElementById('temperature');
+const temperatureValue = document.getElementById('temperature-value');
+
 /**
  * Formats the AI response text with markdown-like syntax
  * Converts various text patterns into HTML elements
@@ -70,12 +74,30 @@ function addMessage(content, isUser = false) {
 }
 
 /**
+ * Converts slider value (0-100) to temperature value (0-1)
+ * @param {number} sliderValue - Value from the slider input
+ * @returns {number} Temperature value between 0 and 1
+ */
+function sliderToTemperature(sliderValue) {
+    return parseFloat((sliderValue / 100).toFixed(2));
+}
+
+// Update temperature display when slider moves
+temperatureSlider.addEventListener('input', (e) => {
+    const temp = sliderToTemperature(e.target.value);
+    temperatureValue.textContent = temp;
+});
+
+/**
  * Sends a message to the AI API and returns the response
  * @param {string} message - The user's message to send to AI
  * @returns {Promise<string>} The AI's response
  */
 async function sendToAI(message) {
     try {
+        // Get current temperature value from slider
+        const temperature = sliderToTemperature(temperatureSlider.value);
+
         // Send POST request to API
         const response = await fetch(API_URL, {
             method: 'POST',
@@ -87,7 +109,7 @@ async function sendToAI(message) {
                 prompt: message,          // User's message
                 stream: false,            // Don't stream response
                 options: {
-                    temperature: 0.7      // Controls randomness in AI response
+                    temperature: temperature  // Use slider value for temperature
                 }
             })
         });
