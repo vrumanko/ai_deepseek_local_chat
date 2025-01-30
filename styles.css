@@ -44,7 +44,7 @@ body {
     margin-bottom: 15px;
     padding: 10px 15px;
     border-radius: 15px;
-    max-width: 70%;
+    max-width: 85%;
     word-wrap: break-word;
     white-space: pre-wrap;
 }
@@ -108,7 +108,7 @@ body {
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     resize: none;
-    height: 100px;
+    height: 60px;
     font-family: inherit;
     margin-bottom: 10px;
 }
