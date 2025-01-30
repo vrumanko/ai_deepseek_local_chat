@@ -1,6 +1,6 @@
 # AI Chat Application
 
-A simple web-based chat application that uses the Ollama API to interact with the DeepSeek-R1 AI model.
+A simple web-based chat application that uses the Ollama API to interact with the DeepSeek-R1. Everything running locally on your machine.
 
 ## Prerequisites
 
@@ -105,7 +105,8 @@ http://localhost:3000
 - Clean user interface, responsive design
 - Real-time chat interaction with the DeepSeek-R1 AI model
 - Error handling and status messages
-
+- Temperature control slider
+- Commented code for better understanding
 
 ## File Structure
 
